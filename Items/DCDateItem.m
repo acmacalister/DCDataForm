@@ -1,0 +1,25 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  DCDateItem.m
+//  iOS Tester
+//
+//  Created by Austin Cherry on 4/18/14.
+//  Copyright (c) 2014 Vluxe. All rights reserved.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#import "DCDateItem.h"
+
+@implementation DCDateItem
+
+- (instancetype)initWithDate:(NSDate *)date
+{
+    if(self = [super init])
+    {
+        self.date = date;
+    }
+    
+    return self;
+}
+
+@end
