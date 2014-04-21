@@ -29,7 +29,7 @@
 {
     if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
-        self.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        self.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
         self.textLabel.numberOfLines = 0;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.textField = [[UITextField alloc] init];
@@ -44,7 +44,7 @@
     [super layoutSubviews];
     
     float pad = 8;
-    self.textField.frame = CGRectMake(self.textLabel.frame.size.width, pad,
+    self.textField.frame = CGRectMake(self.textLabel.frame.size.width+pad, 0,
                                       self.contentView.frame.size.width-self.textLabel.frame.size.width,
                                       self.contentView.frame.size.height);
 }
@@ -54,6 +54,7 @@
     self.textFieldItem = object;
     self.textLabel.text = self.textFieldItem.title;
     self.textField.text = self.textFieldItem.text;
+    self.textField.text = self.textField.placeholder = self.textFieldItem.placeholder;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

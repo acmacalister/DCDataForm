@@ -9,20 +9,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #import "DCDataForm.h"
-#import "DCSwitchItem.h"
 #import "DCSwitchViewCell.h"
 #import "DCTextFieldCell.h"
-#import "DCTextFieldItem.h"
 #import "DCTextViewCell.h"
-#import "DCTextViewItem.h"
 #import "DCCheckViewCell.h"
-#import "DCCheckItem.h"
 #import "DCDateViewCell.h"
-#import "DCDateItem.h"
 #import "DCDetailViewCell.h"
-#import "DCDetailItem.h"
 #import "DCSelectViewCell.h"
-#import "DCSelectItem.h"
 
 @implementation DCDataForm
 

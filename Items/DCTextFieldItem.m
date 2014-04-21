@@ -12,11 +12,12 @@
 
 @implementation DCTextFieldItem
 
-- (instancetype)initWithTitle:(NSString *)title text:(NSString *)text
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder text:(NSString *)text
 {
     if(self = [super init])
     {
         self.title = title;
+        self.placeholder = placeholder;
         self.text = text;
     }
     

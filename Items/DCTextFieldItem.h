@@ -14,7 +14,8 @@
 
 @property(nonatomic, copy)NSString *text;
 @property(nonatomic, copy)NSString *title;
+@property(nonatomic, copy)NSString *placeholder;
 
-- (instancetype)initWithTitle:(NSString *)title text:(NSString *)text;
+- (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder text:(NSString *)text;
 
 @end
