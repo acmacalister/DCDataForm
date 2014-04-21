@@ -22,7 +22,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 + (CGFloat)tableView:(UITableView*)tableView rowHeightForObject:(id)object indexPath:(NSIndexPath*)indexPath
 {
-    return 44;
+    return 120;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -39,8 +39,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    self.textView.frame = self.contentView.frame;
+    self.textView.frame = self.contentView.bounds;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object
@@ -53,9 +52,22 @@
 #pragma mark - UITextView
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.textViewItem.text = self.textView.text;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if([self.delegate respondsToSelector:@selector(didStartTextViewItemEditing:)])
+        [self.delegate didStartTextViewItemEditing:self.textViewItem];
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     self.textViewItem.text = self.textView.text;
+    if([self.delegate respondsToSelector:@selector(didEndTextViewItemEditing:)])
+        [self.delegate didEndTextViewItemEditing:self.textViewItem];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

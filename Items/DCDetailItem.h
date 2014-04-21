@@ -17,4 +17,6 @@
 
 - (instancetype)initWithTitle:(NSString *)title text:(NSString *)text;
 
++ (instancetype)itemWithTitle:(NSString *)title text:(NSString *)text;
+
 @end

@@ -22,4 +22,9 @@
     return self;
 }
 
++ (instancetype)itemWithText:(NSString *)text
+{
+    return [[DCTextViewItem alloc] initWithText:text];
+}
+
 @end

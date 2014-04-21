@@ -10,8 +10,19 @@
 
 #import "DCTableViewCell.h"
 
+@class DCTextViewItem;
+
+@protocol DCTextViewCellDelegate <NSObject>
+
+@optional
+-(void)didStartTextViewItemEditing:(DCTextViewItem*)textViewItem;
+-(void)didEndTextViewItemEditing:(DCTextViewItem*)textViewItem;
+
+@end
+
 @interface DCTextViewCell : DCTableViewCell
 
 @property(nonatomic, strong)UITextView *textView;
+@property(nonatomic,weak)id<DCTextViewCellDelegate>delegate;
 
 @end

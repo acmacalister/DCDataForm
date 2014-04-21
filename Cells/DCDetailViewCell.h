@@ -12,4 +12,6 @@
 
 @interface DCDetailViewCell : DCTableViewCell
 
+@property(nonatomic,strong)UILabel *detailLabel;
+
 @end

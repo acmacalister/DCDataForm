@@ -10,6 +10,17 @@
 
 #import "DCTableViewCell.h"
 
+@class DCDateItem;
+
+@protocol DCDateViewCellDelegate <NSObject>
+
+@optional
+-(void)dateDidChange:(DCDateItem*)dateItem;
+
+@end
+
 @interface DCDateViewCell : DCTableViewCell
+
+@property(nonatomic,weak)id<DCDateViewCellDelegate>delegate;
 
 @end

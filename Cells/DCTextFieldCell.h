@@ -10,8 +10,19 @@
 
 #import "DCTableViewCell.h"
 
+@class DCTextFieldItem;
+
+@protocol DCTextFieldCellDelegate <NSObject>
+
+@optional
+-(void)didStartTextFieldItemEditing:(DCTextFieldItem*)textFieldItem;
+-(void)didEndTextFieldItemEditing:(DCTextFieldItem*)textFieldItem;
+
+@end
+
 @interface DCTextFieldCell : DCTableViewCell
 
 @property(nonatomic, strong)UITextField *textField;
+@property(nonatomic,weak)id<DCTextFieldCellDelegate>delegate;
 
 @end

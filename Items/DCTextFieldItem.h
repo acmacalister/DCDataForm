@@ -15,7 +15,10 @@
 @property(nonatomic, copy)NSString *text;
 @property(nonatomic, copy)NSString *title;
 @property(nonatomic, copy)NSString *placeholder;
+@property(nonatomic, assign)UITextFieldViewMode clearButtonMode;
 
 - (instancetype)initWithTitle:(NSString *)title placeholder:(NSString *)placeholder text:(NSString *)text;
+
++(instancetype)itemWithTitle:(NSString *)title placeholder:(NSString *)placeholder text:(NSString *)text;
 
 @end

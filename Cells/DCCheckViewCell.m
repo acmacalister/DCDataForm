@@ -13,7 +13,7 @@
 
 @interface DCCheckViewCell ()
 
-@property(nonatomic, strong)DCCheckItem *checkItem;
+//@property(nonatomic, strong)DCCheckItem *checkItem;
 
 @end
 
@@ -30,8 +30,7 @@
     if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
         self.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-        self.textLabel.numberOfLines = 0;
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.textLabel.numberOfLines = 1;
     }
     return self;
 }
@@ -43,8 +42,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object
 {
-    self.checkItem = object;
-    if(self.checkItem.checked)
+    DCCheckItem *checkItem = object;
+    self.textLabel.text = checkItem.title;
+    [self updateAccessory:object];
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+-(void)didSelectCell:(id)object
+{
+    DCCheckItem *item = object;
+    item.checked = !item.checked;
+    [self updateAccessory:item];
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+-(void)updateAccessory:(DCCheckItem*)item
+{
+    if(item.checked)
         self.accessoryType = UITableViewCellAccessoryCheckmark;
     else
         self.accessoryType = UITableViewCellAccessoryNone;

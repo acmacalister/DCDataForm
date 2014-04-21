@@ -24,4 +24,9 @@
     return self;
 }
 
++(instancetype)itemWithTitle:(NSString *)title placeholder:(NSString *)placeholder text:(NSString *)text
+{
+    return [[DCTextFieldItem alloc] initWithTitle:title placeholder:placeholder text:text];
+}
+
 @end

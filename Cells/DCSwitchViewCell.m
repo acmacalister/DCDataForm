@@ -30,7 +30,7 @@
     if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
         self.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-        self.textLabel.numberOfLines = 0;
+        self.textLabel.numberOfLines = 1;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.switchView = [[UISwitch alloc] init];
         [self.switchView addTarget:self action:@selector(onChange) forControlEvents:UIControlEventValueChanged];
@@ -43,8 +43,9 @@
 {
     [super layoutSubviews];
     
-    float pad = 8;
-    self.switchView.frame = CGRectMake(self.contentView.frame.size.width-(pad*2+44), pad, 0, 0);
+    float pad = 10;
+    self.switchView.frame = CGRectMake(self.contentView.frame.size.width-(pad*2+44),
+                                       (self.contentView.frame.size.height-self.switchView.frame.size.height)/2, 0, 0);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object

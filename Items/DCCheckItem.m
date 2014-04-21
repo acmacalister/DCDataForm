@@ -12,14 +12,22 @@
 
 @implementation DCCheckItem
 
-- (instancetype)initWithChecked:(BOOL)checked
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (instancetype)initWithTitle:(NSString*)title checked:(BOOL)checked
 {
     if(self = [super init])
     {
+        self.title = title;
         self.checked = checked;
     }
     
     return self;
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////
++(instancetype)itemWithTitle:(NSString*)title checked:(BOOL)checked
+{
+    return [[DCCheckItem alloc] initWithTitle:title checked:checked];
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @end

@@ -16,4 +16,6 @@
 
 - (instancetype)initWithText:(NSString *)text;
 
++ (instancetype)itemWithText:(NSString *)text;
+
 @end
