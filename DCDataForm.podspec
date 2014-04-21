@@ -12,11 +12,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.dependency 'DCDataViews'
 
-  s.subspec 'Cells' do |ss|
-    ss.source_files = 'Cells/*.{h,m}'
-  end
-
   s.subspec 'Items' do |ss|
     ss.source_files = 'Items/*.{h,m}'
+  end
+
+  s.subspec 'Cells' do |ss|
+    ss.source_files = 'Cells/*.{h,m}'
+    ss.dependency 'Items'
   end
 end
