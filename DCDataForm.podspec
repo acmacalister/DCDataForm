@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'Cells' do |ss|
     ss.source_files = 'Cells/*.{h,m}'
-    ss.dependency 'Items'
+    ss.dependency 'DCDataForm/Items'
   end
 end
