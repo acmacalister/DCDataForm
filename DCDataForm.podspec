@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Austin Cherry" => "chillingwithim@gmail.com" }
   s.source       = { :git => "https://github.com/austiniam/DCDataForm.git", :tag => "0.0.1" }
   s.ios.deployment_target = '5.0'
-  s.source_files = '*.{h,m}''
+  s.source_files = '*.{h,m}'
   s.public_header_files = '*.h'
   s.requires_arc = true
   s.dependency 'DCDataViews'
