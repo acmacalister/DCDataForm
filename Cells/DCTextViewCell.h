@@ -17,6 +17,7 @@
 @optional
 -(void)didStartTextViewItemEditing:(DCTextViewItem*)textViewItem;
 -(void)didEndTextViewItemEditing:(DCTextViewItem*)textViewItem;
+-(void)didChangeTextViewItemText:(DCTextViewItem*)textViewItem;
 
 @end
 

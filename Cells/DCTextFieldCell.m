@@ -96,6 +96,8 @@
 -(void)updateField:(UITextField*)field
 {
     self.textFieldItem.text = field.text;
+    if([self.delegate respondsToSelector:@selector(didChangeTextFieldItemText:)])
+        [self.delegate didChangeTextFieldItemText:self.textFieldItem];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

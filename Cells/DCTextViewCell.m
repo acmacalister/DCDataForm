@@ -55,6 +55,8 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
     self.textViewItem.text = self.textView.text;
+    if([self.delegate respondsToSelector:@selector(didChangeTextViewItemText:)])
+        [self.delegate didChangeTextViewItemText:self.textViewItem];
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)textViewDidBeginEditing:(UITextView *)textView

@@ -17,6 +17,7 @@
 @optional
 -(void)didStartTextFieldItemEditing:(DCTextFieldItem*)textFieldItem;
 -(void)didEndTextFieldItemEditing:(DCTextFieldItem*)textFieldItem;
+-(void)didChangeTextFieldItemText:(DCTextFieldItem*)textFieldItem;
 
 @end
 
